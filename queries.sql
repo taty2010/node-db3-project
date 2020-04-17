@@ -32,3 +32,22 @@ INNER JOIN Customer as c
 ON o.CustomerId = c.Id  AND o.EmployeeId = Employee.id
 
 
+-- Stretch 1
+SELECT c.CategoryName, COUNT(p.CategoryID)
+AS [Count]
+FROM Products as p
+JOIN Categories as c
+On p.CategoryID = c.CategoryID
+GROUP BY c.CategoryName
+
+-- Stretch 2
+SELECT o.OrderID, COUNT(o.OrderID)
+AS ItemCount
+FROM [Orders] as o
+JOIN OrderDetails as od
+On o.OrderID = od.OrderID
+GROUP BY o.OrderID
+
+        
+
+
